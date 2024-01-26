@@ -1,0 +1,11 @@
+{
+  "name": "broncoats",
+  "version": "1.0.0",
+  "description": "Resume scanner tailored to the Cal Poly Pomona CS Discord Server!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CPP-CS",
+  "license": "GPL-3.0-only"
+}

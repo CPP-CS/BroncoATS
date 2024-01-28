@@ -10,8 +10,7 @@ module.exports = {
 				.setRequired(true))
 		.addBooleanOption(option =>
 			option.setName('private')
-				.setDescription('Instead of making a thread, the bot will DM you the grade.')
-				.setRequired(true)),
+				.setDescription('Instead of making a thread, the bot will DM you the grade.')),
 	async execute(interaction) {
 		const attachment = interaction.options.getAttachment('resume');
 		// Checks for accepted file format.

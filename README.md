@@ -1,5 +1,5 @@
 # BroncoATS
-Tailored to the CPP Computer Science Discord server, BroncoATS is a Discord bot that uses an ATS (applicant tracking system) to parse through resumes and gives feedback on them, attempting to mimick ATS that real employers would use.
+Tailored to the CPP Computer Science Discord server, BroncoATS is a Discord bot that uses an ATS (Applicant Tracking System) to parse through resumes and give feedback on them, attempting to mimic one that a real employer would use.
 ## Requirements
 - Node, 16.11.0 or above
 - Discord.JS, 14.14.1 or above

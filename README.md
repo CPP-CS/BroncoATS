@@ -1,5 +1,7 @@
 # BroncoATS
-Tailored to the Cal Poly Pomona Discord server, BroncoATS is a Discord bot that uses an ATS (applicant tracking system) to parse through resumes and gives feedback on them, attempting to mimick ATS that real employers would use.
+## Requirements
+- Node, 16.11.0 or above
+- Discord.JS, 14.14.1 or above
 ## Dev Setup
 1. Clone repo.
 2. Run npm install.

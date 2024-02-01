@@ -26,6 +26,11 @@ module.exports = {
 			(attachment.contentType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
 			if (interaction.options.getBoolean('private') ?? true) {
 				await interaction.reply(`Received ${attachment.name}, creating thread...`);
+				const thread = await interaction.channel.threads.create({
+					name: attachment.name,
+					autoArchiveDuration: 60,
+					reason: `${interaction.client.username}'s resume review`,
+				});
 			}
 		}
 		else {

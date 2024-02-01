@@ -12,6 +12,13 @@ module.exports = {
 			option.setName('private')
 				.setDescription('Instead of making a thread, the bot will DM you the grade.')),
 	async execute(interaction) {
+		if (interaction.channel.isThread()) {
+			interaction.reply('Can\'t make a thread in a thread!')
+				.then(msg => {
+					// Deletes message after 5 seconds.
+					setTimeout(() => msg.delete(), 5000);
+				});
+		}
 		const attachment = interaction.options.getAttachment('resume');
 		// Checks for accepted file format, either .pdf, .doc, or .docx.
 		if ((attachment.contentType == 'application/pdf') ||

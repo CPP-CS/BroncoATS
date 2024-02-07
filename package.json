@@ -11,7 +11,8 @@
   "author": "CPP-CS",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "^14.14.1",
+    "pdfreader": "^3.0.2"
   },
   "devDependencies": {
     "eslint": "^8.56.0"

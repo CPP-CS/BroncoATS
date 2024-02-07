@@ -25,7 +25,12 @@ module.exports = {
 			(attachment.contentType == 'application/msword') ||
 			(attachment.contentType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
 			if (interaction.options.getBoolean('private') ?? true) {
-				await interaction.reply(`Received ${attachment.name}, creating thread...`);
+				// Creates thread for resume
+				await interaction.reply(`Received ${attachment.name}, creating thread...`)
+					.then(msg => {
+						// Deletes message after 5 seconds.
+						setTimeout(() => msg.delete(), 5000);
+					});
 				const thread = await interaction.channel.threads.create({
 					name: `${interaction.user.username}'s resume review`,
 					autoArchiveDuration: 60,

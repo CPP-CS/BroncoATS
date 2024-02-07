@@ -26,13 +26,20 @@ module.exports = {
 			(attachment.contentType == 'application/msword') ||
 			(attachment.contentType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
 			if (interaction.options.getBoolean('private') ?? false) {
-				await interaction.reply(`Received ${attachment.name}, creating DM...`)
-					.then(msg => {
-						// Deletes message after 5 seconds.
-						setTimeout(() => msg.delete(), 5000);
+				try {
+					await interaction.reply({
+						content: `Received ${attachment.name}, creating DM...`,
+						ephemeral: true
 					});
-				// DMs resume grade if private is true
-				await user.send(`bulgolgi.`);
+					// DMs resume grade if private is true
+					await user.send(`bulgolgi.`);
+				} catch (error) {
+					// Gives an error if DM is not successful
+					await interaction.editReply({ 
+						content: `DM failed. Check if your DMs are enabled!`, 
+						ephemeral: true 
+					});
+				}
 			} else {
 				// Creates thread for resume grade if private is null/false
 				await interaction.reply(`Received ${attachment.name}, creating thread...`)

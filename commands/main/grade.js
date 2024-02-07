@@ -42,7 +42,10 @@ module.exports = {
 				}
 			} else {
 				// Creates thread for resume grade if private is null/false
-				await interaction.reply(`Received ${attachment.name}, creating thread...`)
+				await interaction.reply({
+					content: `Received ${attachment.name}, creating thread...`,
+					ephemeral: true
+				})
 					.then(msg => {
 						// Deletes message after 5 seconds.
 						setTimeout(() => msg.delete(), 5000);

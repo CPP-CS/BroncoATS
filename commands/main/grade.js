@@ -24,8 +24,11 @@ module.exports = {
 		if ((attachment.contentType == 'application/pdf') ||
 			(attachment.contentType == 'application/msword') ||
 			(attachment.contentType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
-			if (interaction.options.getBoolean('private') ?? true) {
-				// Creates thread for resume
+			if (interaction.options.getBoolean('private') ?? false) {
+				// DMs resume grade if private is true
+				await interaction.reply(`lmao`);
+			} else {
+				// Creates thread for resume grade if private is null/false
 				await interaction.reply(`Received ${attachment.name}, creating thread...`)
 					.then(msg => {
 						// Deletes message after 5 seconds.

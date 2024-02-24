@@ -4,9 +4,9 @@
   "description": "Resume scanner tailored to the Cal Poly Pomona CS Discord Server!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node \\index.js",
-    "refresh": "node \\deploy_commands.js && node \\index.js"
+    "dev": "nodemon ./src/index.ts",
+    "start": "node ./build/index.js",
+    "build": "tsc"
   },
   "author": "CPP-CS",
   "license": "GPL-3.0-only",
@@ -15,6 +15,9 @@
     "pdfreader": "^3.0.2"
   },
   "devDependencies": {
+    "@types/node": "^20.11.20",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.3.3",
     "eslint": "^8.56.0"
   }
 }
